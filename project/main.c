@@ -71,7 +71,7 @@ int main(int argc, char *argv[]) {
 										student[i].studentId,
 										student[i].name,
 										student[i].classroomId,
-										student[i].name,
+										
 										student[i].email,
 										student[i].phoneNumber);
 										printf("|=======|======================|==============|=========================|=================|\n");
