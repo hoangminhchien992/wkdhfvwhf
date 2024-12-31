@@ -9,14 +9,14 @@ int main(int argc, char *argv[]) {
 	Student student[100];
 	do{
 		system("cls");
-		roleMenu();
+		startProgram();
 		printf("Enter Your Choice: ");
 		scanf("%d", &chRole);
 		if(chRole==1){
-			login();
+			//login();
 			do{
 				system("cls");
-				manageMenu();
+				menuAdmin();
 				printf("Enter Your Choice: ");
 				scanf("%d", &chA1);
 				switch(chA1){
@@ -36,9 +36,9 @@ int main(int argc, char *argv[]) {
 									} else{
 										printStudent(student, length);
 									}
-									printf("\nGo Back(0) or Exit The Program(10)?: ");
+									printf("\nGo Back(1) or Exit(0)?: ");
 									scanf("%d", &backExit);
-									if(backExit==10){
+									if(backExit==0){
 										printf("Exited The Program");
 										exit(0);
 									}
@@ -49,7 +49,7 @@ int main(int argc, char *argv[]) {
 								case 4:
 									system("cls");
 									printf("***EDIT STUDENT INFORMATION***\n\n");
-									printf("Enter Student ID: ");
+									printf("Enter Student Id: ");
 									scanf("%d", &find);
 									found=-1;
 									for(int i=0;i<length; i++){
@@ -62,23 +62,23 @@ int main(int argc, char *argv[]) {
 									} else{
 										printf("  STUDENT INFORMATION\n");
 										printf("================================\n");
-										printf("ID: %d\n", student[found].studentId);
-										printf("Classroom ID: %s\n", student[found].classroomId);
-										printf("Full Name: %s\n", student[found].name);
+										printf("Id: %d\n", student[found].studentId);
+										printf("Classroom Id: %s\n", student[found].classroomId);
+										printf("Name: %s\n", student[found].name);
 										printf("Email: %s\n", student[found].email);
 										printf("Phone Number: %s\n", student[found].phoneNumber);
 										printf("\n***UPDATE INFORMATION***\n\n");
 										getchar();
-										printf("Enter Student's Classroom ID: ");
+										printf("StudentClassroomId: ");
 										fgets(student[found].classroomId,5,stdin);
 										student[found].classroomId[strcspn(student[found].classroomId,"\n")]='\0';
-										printf("Enter Student's Full Name: ");
+										printf("StudentName: ");
 										fgets(student[found].name,30,stdin);
 										student[found].name[strcspn(student[found].name,"\n")]='\0';
-										printf("Enter Student's Email: ");
+										printf("StudentEmail: ");
 										fgets(student[found].email,35,stdin);
 										student[found].email[strcspn(student[found].email,"\n")]='\0';
-										printf("Enter Student's Phone Number: ");
+										printf("StudentPhone: ");
 										fgets(student[found].phoneNumber,15,stdin);
 										student[found].phoneNumber[strcspn(student[found].phoneNumber,"\n")]='\0';
 										printf("\n*Student's Information Changed Successfully*\n"); 
